@@ -51,11 +51,13 @@ Here are the steps to calculate the matrices:
 4. Do a matrix multiplication of the two vectors, resulting in a square shaped matrix (the dimension depends on the number of attributes/variables, if there are 3 attributes/variables, then it'll be a 3x3 matrix). 
 5. Do step 2-4 for all the samples/rows, then sum them all up.
 6. Divide the results of step 5 with the number of samples -1 (N-1). The result of that will be the Covariance Matrix.
-These steps basically follow this formula:
+These steps basically follow this formula:\
+![](formulas/CovarianceFormula.jpg)
 
 #### Correlation Matrix
-1. From the covariance matrix, create a new matrix which take the shape and diagonal value of the covariance matrix. The diagonal value of covariance matrix is the variance for each attribut/variable. After that, inverse that matrix. We'll call this newly created matrix as "E".
-2. The correlation matrix is created from the matrix dot product of E . Covariance Matrix . E, or in written form is like this:
+1. From the covariance matrix, create a new matrix which take the shape and diagonal value of the covariance matrix. The diagonal value of covariance matrix is the variance for each attribut/variable. After that, square root, then inverse that matrix. We'll call this newly created matrix as "E".
+2. The correlation matrix is created from the matrix dot product of E . Covariance Matrix . E, or in written form is like this:\
+![](formulas/CorrelationFormula.jpg)
 
 ### Putting the data into the function
 Because I've already created a function to calculate Covariance and Correlation Matrix, to get the result of each data in each number, I just need to pass that data as a parameter to my function. These are the data for each number and the way I use my function with the data.
